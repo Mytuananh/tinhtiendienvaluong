@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tiền điện</title>
+</head>
+<body>
+<form>
+    <p>Số điện cũ:</p>
+    <p><input type="text" id="tiencu" placeholder="Nhập số điện"/></p>
+    <p>Số điện mới:</p>
+    <p><input type="text" id="tienmoi" placeholder="Nhập số điện"/></p>
+    <button type="button" onclick="tienthang()">Giá tiền điện</button>
+  <p>Số điện là:</p>
+    <p id="sodien"></p>
+    <p>Số tiền là:</p>
+    <p id="tiendien"></p>
+</form>
+<script>
+    function tienthang() {
+        let tien1 = document.getElementById("tiencu").value;
+        let tien11 = parseInt(tien1)
+        let tien2 = document.getElementById("tienmoi").value;
+        let tien22 = parseInt(tien2)
+        let c = tien22 - tien11
+        let d = c*2.927
+        let e = c*2.834
+        let f = c*2.536
+        let g = c*2.014
+        let i = c*1.734
+        let k = c*1.678
+        document.getElementById("sodien").innerText = 'Số điện =' + c
+        if (c >= 401) {
+            document.getElementById("tiendien").innerText = d + 'VND'
+        } else if (c>= 301) {
+            document.getElementById("tiendien").innerText = e + 'VND'
+        } else if (c>= 201) {
+            document.getElementById("tiendien").innerText = f + 'VND'
+        } else if (c>= 101) {
+            document.getElementById("tiendien").innerText = g + 'VND'
+        } else if (c>= 51) {
+            document.getElementById("tiendien").innerText = i + 'VND'
+        } else if (c> 0) {
+            document.getElementById("tiendien").innerText = k + 'VND'
+        } else {
+            document.getElementById("tiendien").innerText = 'Không tồn tại'
+        }
+    }
+</script>
+</body>
+</html>

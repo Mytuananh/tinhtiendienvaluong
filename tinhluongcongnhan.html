@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Lương Công Nhân</title>
+</head>
+<body>
+<form>
+    <p>Số ngày công:</p>
+    <input type="text" id="ngaycong" placeholder="Nhập số ngày"/>
+   <p>
+    <select id="bac">
+        <option value="5000000">Bậc A</option>
+        <option value="6000000">Bậc B</option>
+        <option value="8000000">Bậc C</option>
+        <option value="10000000">Bậc D</option>
+    </select>
+   </p>
+    <p><button type="button" onclick="luong()">Lương công nhân</button></p>
+    <p>Lương của nhân công trong 1 tháng là:</p>
+    <p id="luongcn"></p>
+</form>
+<script>
+    function luong() {
+        let ngaycong= document.getElementById("ngaycong").value;
+        let ngaycong1= parseInt(ngaycong)
+        let bac= document.getElementById("bac").value;
+        let bac1= parseInt(bac)
+        let luongcn = (bac1*ngaycong1)/23
+        let luongcn1 = parseFloat(luongcn)
+       if (ngaycong1 >31) {
+           document.getElementById("luongcn").innerText = 'Không xét'
+       } else if (ngaycong1 >0) {
+           document.getElementById("luongcn").innerText = luongcn1 + 'VND'
+       } else {
+           document.getElementById("luongcn").innerText = 'Vô nghĩa'
+       }
+    }
+</script>
+</body>
+</html>
